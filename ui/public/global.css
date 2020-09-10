@@ -1,0 +1,28 @@
+
+body {
+  /*font-family: 'Kumbh Sans', sans-serif;*/
+  font-family: 'Fira Code', sans-serif;
+  line-height: 1.3rem;
+  font-size: 0.8rem;
+  background-color: #e3e5ee;
+}
+
+.link {
+  display: block;
+  padding: 4px 8px 4px 20px;
+}
+.link:link, .link:visited {
+  text-decoration: none;
+  color: inherit;
+}
+.link:hover {
+  color: #bccee4;
+}
+.link > i {
+  margin-right: 10px;
+}
+.link > hr {
+  border-color: rgba(255, 255, 255, 0.1);
+  margin-right: 45px;
+  width: auto;
+}
