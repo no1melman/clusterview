@@ -59,14 +59,12 @@
   <div class="nav-header">Workloads</div>
   <ul>
     <li><Link href="/deployments" class="link">Deployments</Link></li>
+    <li><Link href="/statefulsets" class="link">Stateful Sets</Link></li>
     <li><a href="javascript:void(0)">Daemon Sets</a></li>
     <li><a href="javascript:void(0)">Secrets</a></li>
     <li><a href="javascript:void(0)">Config Maps</a></li>
-    <li><a href="javascript:void(0)">Pods</a></li>
-    <li>
-      <a href="javascript:void(0)"><hr /></a>
-    </li>
-    <li><a href="javascript:void(0)">Pods</a></li>
+    <li><Link href="/pods" class="link">Pods</Link></li>
+
     <li>
       <a href="javascript:void(0)"><hr /></a>
     </li>
@@ -75,7 +73,7 @@
     <li>
       <a href="javascript:void(0)"><hr /></a>
     </li>
-    <li><a href="javascript:void(0)">Ingresses</a></li>
+    <li><Link href="/ingresses" class="link">Ingresses</Link></li>
     <li><a href="javascript:void(0)">Services</a></li>
   </ul>
   <div class="nav-header">Helm</div>

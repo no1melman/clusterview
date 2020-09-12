@@ -7,6 +7,7 @@
     width: 100%;
     border-collapse: collapse;
     margin: 0;
+    font-size: 0.6rem;
   }
   th {
     text-align: left;

@@ -70,6 +70,7 @@
     outline: none;
     border: 1px solid #fff;
     display: block;
+    padding-right: 20px;
   }
 </style>
 

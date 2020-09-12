@@ -8,6 +8,7 @@ kc.loadFromDefault()
 console.log(kc.setCurrentContext('docker-desktop'))
 const k8sCoreApi = kc.makeApiClient(k8s.CoreV1Api)
 const k8sAppsApi = kc.makeApiClient(k8s.AppsV1Api)
+const k8sNetBV1Api = kc.makeApiClient(k8s.NetworkingV1beta1Api)
 
 const port = 3000
 
@@ -27,6 +28,30 @@ app.get('/api/:namespace/deployments', (req, res) => {
 
   k8sAppsApi
     .listNamespacedDeployment(namespace)
+    .then(d => res.json(d.body))
+    .catch(err => res.status(500).json(err))
+})
+app.get('/api/:namespace/pods', (req, res) => {
+  const { namespace } = req.params
+
+  k8sCoreApi
+    .listNamespacedPod(namespace)
+    .then(d => res.json(d.body))
+    .catch(err => res.status(500).json(err))
+})
+app.get('/api/:namespace/statefulsets', (req, res) => {
+  const { namespace } = req.params
+
+  k8sAppsApi
+    .listNamespacedStatefulSet(namespace)
+    .then(d => res.json(d.body))
+    .catch(err => res.status(500).json(err))
+})
+app.get('/api/:namespace/ingresses', (req, res) => {
+  const { namespace } = req.params
+
+  k8sNetBV1Api
+    .listNamespacedIngress(namespace)
     .then(d => res.json(d.body))
     .catch(err => res.status(500).json(err))
 })

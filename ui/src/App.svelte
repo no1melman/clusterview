@@ -4,12 +4,15 @@
   import Navigation from "./Navigation.svelte";
 
   import Layout from "./Layout.svelte";
-	import Namespace from "./namespace/Namespace.svelte";
-	import Deployments from "./deployments/Deployments.svelte"
+  import Namespace from "./namespace/Namespace.svelte";
+  import Deployments from "./deployments/Deployments.svelte";
 
   import TopBar from "./TopBar.svelte";
 
   import { scope } from "./stores";
+  import Pods from "./pods/Pods.svelte";
+  import StatefulSet from "./statefulset/StatefulSet.svelte";
+  import Ingresses from "./ingresses/Ingresses.svelte";
 
   scope.subscribe(console.info);
 
@@ -43,10 +46,13 @@
     <Navigation />
   </div>
   <div slot="main">
-		<TopBar />
+    <TopBar />
     <Router>
       <Route exact path="/" component={Namespace} />
       <Route exact path="/deployments" component={Deployments} />
+      <Route exact path="/pods" component={Pods} />
+      <Route exact path="/statefulsets" component={StatefulSet} />
+      <Route exact path="/ingresses" component={Ingresses} />
     </Router>
   </div>
 </Layout>
